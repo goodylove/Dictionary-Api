@@ -17,6 +17,30 @@ body {
   border-radius: 7px;
   padding: 28px 28px 45px;
 }
+
+.wrapper.active .unlist {
+  display: block;
+  height: 303px;
+  opacity: 1;
+}
+.unlist .content {
+  max-height: 215px;
+  overflow-y: auto;
+}
+.unlist .content::-webkit-scrollbar {
+  width: 0px;
+}
+
+.wrapper.active .info-text {
+  display: none;
+}
+.wrapper .unlist {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
 .wrapper header {
   font-size: 28px;
   font-weight: 500px;
@@ -68,9 +92,7 @@ body {
 .search input:valid ~ span {
   display: block;
 }
-.unlist {
-  display: none;
-}
+
 .info-text {
   font-size: 13px;
   margin: -3px 0 -10px;
