@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dictionary Api</title>
+    <link
+      rel="stylesheet"
+      href="bootsrap icons/icons-1.3.0/font/bootstrap-icons.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>English Dictionary</header>
+      <div class="search">
+        <input type="text" placeholder="search a word" required />
+        <i class="bi bi-search"></i>
+        <span class="bi bi-x"></span>
+      </div>
+      <p class="info-text">
+        type a word and press enter to get meaning, example, pronouncation and
+        synonmys of that typed word
+      </p>
+      <ul class="unlist">
+        <li class="word">
+          <div class="detials">
+            <p>happy</p>
+            <span>adjective/'hapi/</span>
+          </div>
+          <i class="bi bi-volume-up"></i>
+        </li>
+        <div class="content">
+          <li class="meaning">
+            <div class="detials">
+              <p>meaning</p>
+              <span>feeling pleasure</span>
+            </div>
+          </li>
+          <li class="example">
+            <div class="detials">
+              <p>example</p>
+              <span>feeling pleasure</span>
+            </div>
+          </li>
+          <li class="synonmys">
+            <div class="detials">
+              <p>synonmys</p>
+              <div class="list">
+                <span>glad</span>
+                <span>cheerful</span>
+                <span>contented</span>
+                <span>delighted</span>
+                <span>joyful</span>
+              </div>
+            </div>
+          </li>
+        </div>
+      </ul>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
