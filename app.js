@@ -31,6 +31,7 @@ function data(result, word) {
     wordMeaning.innerHTML = definitions.definition;
 
     wordExample.innerHTML = definitions.example;
+
     document.querySelector(".partOf").innerHTML =
       result[0].meanings[0].partOfSpeech;
     audio = new Audio("https:" + result[0].phonetics[0].audio);
