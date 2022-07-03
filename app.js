@@ -34,7 +34,8 @@ function data(result, word) {
 
     document.querySelector(".partOf").innerHTML =
       result[0].meanings[0].partOfSpeech;
-    audio = new Audio("https:" + result[0].phonetics[0].audio);
+
+    audioTrans = new SpeechSynthesisUtterance(result[0].word);
   }
 }
 
@@ -57,5 +58,6 @@ searchInput.addEventListener("keyup", (e) => {
   }
 });
 volumePlay.addEventListener("click", () => {
-  audio.play();
+  speechSynthesis.speak(audioTrans);
+  audioTrans = "";
 });
