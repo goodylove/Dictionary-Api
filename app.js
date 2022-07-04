@@ -10,7 +10,7 @@ const content = document.querySelector(".content");
 const wordMeaning = document.querySelector(".meaning");
 const synonmys = document.querySelector(".synonmys");
 const volumePlay = document.querySelector(".play-audio");
-let audio;
+let pronounciation = new Audio();
 const wordExample = document.querySelector(".example");
 
 // data function
@@ -27,15 +27,22 @@ function data(result, word) {
     document.querySelector(".word-p").innerHTML = result[0].word;
 
     document.querySelector(".phonetic").innerHTML = result[0].phonetic;
-
-    wordMeaning.innerHTML = definitions.definition;
-
-    wordExample.innerHTML = definitions.example;
+    if (definitions == undefined) {
+      wordMeaning.innerHTML = "";
+    } else {
+      wordMeaning.innerHTML = definitions.definition;
+    }
+    if (definitions.example == undefined) {
+      wordExample.innerHTML = "";
+    } else {
+      wordExample.innerHTML = definitions.example;
+    }
 
     document.querySelector(".partOf").innerHTML =
       result[0].meanings[0].partOfSpeech;
+    pronounciation.src = result[0].phonetics[2].audio;
 
-    audioTrans = new SpeechSynthesisUtterance(result[0].word);
+    // audioTrans = new SpeechSynthesisUtterance(result[0].word);
   }
 }
 
@@ -58,6 +65,5 @@ searchInput.addEventListener("keyup", (e) => {
   }
 });
 volumePlay.addEventListener("click", () => {
-  speechSynthesis.speak(audioTrans);
-  audioTrans = "";
+  pronounciation.play();
 });
