@@ -27,12 +27,12 @@ function data(result, word) {
     document.querySelector(".word-p").innerHTML = result[0].word;
 
     document.querySelector(".phonetic").innerHTML = result[0].phonetic;
-    if (definitions == undefined) {
+    if (definitions) {
       wordMeaning.innerHTML = "";
     } else {
       wordMeaning.innerHTML = definitions.definition;
     }
-    if (definitions.example == undefined) {
+    if (definitions.example) {
       wordExample.innerHTML = "";
     } else {
       wordExample.innerHTML = definitions.example;
